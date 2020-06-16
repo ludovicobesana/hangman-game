@@ -1,10 +1,20 @@
+# @Author: ludovicobesana
+# @Date:   2020-06-16T12:48:44+02:00
+# @Last modified by:   clochard
+# @Last modified time: 2020-06-16T12:49:19+02:00
+
+
+
 """
 THE HANGMAN GAME
 @author ludovicobesana
 """
 import random
 def hangman():
-    word = random.choice(["cat", "turtle", "Elephant", "Tiger"])
+    wordfile = open('words.txt')
+    words = wordfile.read().splitlines()
+    wordfile.close()
+    word = random.choice(words)
     validLetters = 'abcdefghijklmnopqrstuvwxyz'
     turns = 10
     guessmade = ''
