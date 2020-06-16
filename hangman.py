@@ -1,3 +1,10 @@
+# @author ludovicobesana
+# @Date:   2020-06-16T12:22:40+02:00
+# @Last modified by:   clochard
+# @Last modified time: 2020-06-16T12:30:05+02:00
+
+
+
 """
 THE HANGMAN GAME
 @author ludovicobesana
@@ -6,6 +13,7 @@ import random
 def hangman():
     word = random.choice(["cat", "turtle", "Elephant", "Tiger"])
     validLetters = 'abcdefghijklmnopqrstuvwxyz'
+    word = word.lower()
     turns = 10
     guessmade = ''
 
@@ -25,6 +33,7 @@ def hangman():
 
         print("Guess the word:", main+"\n")
         guess = input()
+        guess = guess.lower()
 
         if guess in validLetters:
             guessmade = guessmade + guess
